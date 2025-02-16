@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #divbox{
+            border: 1px solid red;
+        }
+        div{
+            width:80%;
+            min-height: 80px;
+            margin: 50px auto;
+            padding: 25px;
+            font-size: 25px;
+            display :flex;
+            flex-direction: column;
+            text-align: center;
+            border: 1px solid blue;
+            border-radius: 10px;
+        }
+        input{
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+            width: 100px;
+            height: 35px;
+            outline: none;
+            border: 5px solid blue;
+            border-radius: 8px;
+        }
+        .menu{
+            width: 80%;
+            margin: 50px auto;
+            min-height: 150px;
+            padding: 0px;
+            display: flex;
+            border: none;
+            /* border: 1px solid red; */
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        #add{
+            margin: 0;
+            width: 40%;
+            padding: 8px;
+        }
+        #remove{
+            margin: 0;
+            width: 40%;
+            padding: 15px;
+        }
+        
+    </style>
+    <script>
+        function addElement(){
+            let targetValue = document.getElementById("input1").value;
+            let target = document.getElementById(`div${targetValue}`);
+
+            // Remove existing warning before appending a new one
+            let existingWarning = document.querySelector("#add p");
+            if (existingWarning) {
+            existingWarning.remove();
+            }
+
+            if(target!=null){
+                let warning = document.createElement("p");
+                warning.innerText="Already present..";
+                warning.style.color="red";
+                document.getElementById("add").appendChild(warning);
+            }
+            else{
+                let newDiv = document.createElement("div");
+                newDiv.innerText="Div"+targetValue;
+                newDiv.setAttribute("id",`div${targetValue}`);
+                document.querySelector("#divbox").appendChild(newDiv);
+                document.getElementById("input1").value = "";
+
+
+            }
+        }
+
+        function removeElement(){
+            let targetValue = document.getElementById("input2").value;
+            let target = document.getElementById(`div${targetValue}`);
+
+            let existingWarning = document.querySelector("#remove p");
+            if (existingWarning) {
+            existingWarning.remove();
+            }
+
+            if(target==null){
+                let warning = document.createElement("p");
+                warning.innerText="No div with this number..";
+                warning.style.color="red";
+                document.getElementById("remove").appendChild(warning);
+            }
+            else{
+                target.parentNode.removeChild(target);
+                document.getElementById("input2").value = "";
+
+            }
+        }
+
+        
+    </script>
+</head>
+<body>
+    <div id="divbox">
+        <div id="div1">
+            Div1
+        </div>
+        <div id="div2">
+            Div2
+        </div>
+        <div id="div3">
+            Div3
+        </div>
+    </div>
+    
+    <div class="menu">
+        <div id="add">
+            <label for="input1" style="text-align: center;"> <h6>Enter div number to ADD from dom</h3></label>
+            <input type="text" id="input1" name="input" value="" onchange="addElement()" >
+        </div>
+        <div id="remove">
+            <label for="input2" style="text-align: center;"> <h6>Enter div number to REMOVE from dom</h3></label>
+            <input type="text" id="input2" name="input" value="" onchange="removeElement()" >
+        </div>
+    </div>
+    
+</body>
+</html>
