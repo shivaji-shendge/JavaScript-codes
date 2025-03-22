@@ -22,7 +22,10 @@ img{
     top:200px;
     right:20px;
 }
-i{
-    color: blue;
-    background-color: white;
+button{
+    height: 25px;
+    border-radius: 5px;
+    color: white;
+    background-color: green;
+    border: none;
 }
