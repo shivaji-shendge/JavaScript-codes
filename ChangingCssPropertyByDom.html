@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{
+            text-align: center;
+        }
+        img{
+            display: block;
+            width: 300px;
+            margin: 0 auto;
+        }
+        button{
+            display: block;
+            margin: 15px auto;
+            height: 25px;
+            background-color: royalblue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>This is Nature image</h2>
+    <img src="https://m.media-amazon.com/images/I/710GjkD28nL._AC_UF1000,1000_QL80_.jpg" alt="">
+    <button onclick="changeBorder()">Change Border</button>
+    <script>
+        document.querySelector("h2").setAttribute("id","firstheading");
+        function changeBorder(){
+            document.querySelector("img").style.borderRadius= "15px";
+        }
+    </script>
+</body>
+</html>
