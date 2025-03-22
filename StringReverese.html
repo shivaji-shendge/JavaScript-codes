@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let str =" I Love India "
+        str =str.trim();
+        const newArr=str.split(' ');
+        let revStr ="" ;
+        for(let i=newArr.length-1;i>=0;i--){
+            revStr += newArr[i];
+            if(i!=0){
+                revStr = revStr+" ";
+            }
+        }
+         console.log(revStr)
+    </script>
+</head>
+<body>
+
+</body>
+</html>
