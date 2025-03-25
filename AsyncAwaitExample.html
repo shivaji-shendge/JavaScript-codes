@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const myPromise = new Promise((resolve,reject)=>{
+            let result= false;
+            setTimeout(()=>{
+                if(result){
+                    resolve({username:"Shivaji", email:"shivaji@gmail"})
+                }
+                else{
+                    reject("There is some error")
+                }
+            })
+
+        })
+
+        async function myFunction(){
+            try{
+                let response = await myPromise;
+                console.log(response);
+            }
+            catch(error){
+                console.log(error);
+            }
+            
+        }
+        myFunction();
+    </script>
+</body>
+</html>
