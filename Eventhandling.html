@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            width: 500px;
+            height: 30px;
+            display: block;
+            margin: 20px auto;;
+            padding: 10px 20px;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+    <script>
+        function handler(){
+            let val=document.getElementById("txt1").value;
+            document.getElementById("h").innerText=`You Entered : ${val}`
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="txt1" oninput="handler()" >
+    <h1 id="h"></h1>
+</body>
+</html>
