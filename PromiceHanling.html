@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const myPromice = new Promise((resolve, reject) => {
+            setInterval(()=>{
+                document.write(Date);
+            },2000);
+            resolve("Promice is resolved");
+        })
+        myPromice.then((masg)=>console.log("promice is resolve"));
+    </script>
+</body>
+</html>
